@@ -12,6 +12,3 @@ data/**
 .DS_Store
 .Rhistory
 /.quarto/*
-
-if(!require("usethis")) install.packages("usethis")
-usethis::git_sitrep()
