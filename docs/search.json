@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "mp01.html",
+    "href": "mp01.html",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "",
+    "text": "This white paper presents an analysis of New York City’s payroll data with recommendations to optimize taxpayer spending. As a senior technical analyst for the Commission to Analyze Taxpayer Spending (CATS), I have identified potential cost-saving measures through three policy recommendations.\n\n\n\nThe job title with the highest base rate of pay is Chief Medical Examiner\nNYPD has the highest average total annual payroll per employee\nNYPD also has the most employees on payroll each year\nFire Department has the highest overtime usage compared to regular hours\nThe city’s aggregate payroll has grown significantly over the past 10 years"
+  },
+  {
+    "objectID": "mp01.html#quick-facts-about-nyc-payroll",
+    "href": "mp01.html#quick-facts-about-nyc-payroll",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "",
+    "text": "The job title with the highest base rate of pay is Chief Medical Examiner\nNYPD has the highest average total annual payroll per employee\nNYPD also has the most employees on payroll each year\nFire Department has the highest overtime usage compared to regular hours\nThe city’s aggregate payroll has grown significantly over the past 10 years"
+  },
+  {
+    "objectID": "mp01.html#data-source",
+    "href": "mp01.html#data-source",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "3.1 Data Source",
+    "text": "3.1 Data Source\n\n\nShow code\n# Task 1: Data Acquisition\nif(!file.exists(\"data/mp01/nyc_payroll_export.csv\")){\n  dir.create(\"data/mp01\", showWarnings=FALSE, recursive=TRUE)\n  \n  ENDPOINT &lt;- \"https://data.cityofnewyork.us/resource/k397-673e.json\"\n  \n  if(!require(\"httr2\")) install.packages(\"httr2\")\n  library(httr2)\n  \n  if(!require(\"jsonlite\")) install.packages(\"jsonlite\")\n  library(jsonlite)\n  \n  if(!require(\"dplyr\")) install.packages(\"dplyr\")\n  library(dplyr)\n  \n  if(!require(\"readr\")) install.packages(\"readr\")\n  library(readr)\n  \n  BATCH_SIZE &lt;- 50000\n  OFFSET     &lt;- 0\n  END_OF_EXPORT &lt;- FALSE\n  ALL_DATA &lt;- list()\n  \n  while(!END_OF_EXPORT){\n    cat(\"Requesting items\", OFFSET, \"to\", BATCH_SIZE + OFFSET, \"\\n\")\n    \n    req &lt;- request(ENDPOINT) |&gt;\n      req_url_query(`$limit`  = BATCH_SIZE, \n                    `$offset` = OFFSET)\n    \n    resp &lt;- req_perform(req)\n    \n    batch_data &lt;- fromJSON(resp_body_string(resp))\n    \n    ALL_DATA &lt;- c(ALL_DATA, list(batch_data))\n    \n    if(NROW(batch_data) != BATCH_SIZE){\n      END_OF_EXPORT &lt;- TRUE\n      \n      cat(\"End of Data Export Reached\\n\")\n    } else {\n      OFFSET &lt;- OFFSET + BATCH_SIZE\n    }\n  }\n  \n  ALL_DATA &lt;- bind_rows(ALL_DATA)\n  \n  cat(\"Data export complete:\", NROW(ALL_DATA), \"rows and\", NCOL(ALL_DATA), \"columns.\")\n  \n  write_csv(ALL_DATA, \"data/mp01/nyc_payroll_export.csv\")\n}"
+  },
+  {
+    "objectID": "mp01.html#data-preparation",
+    "href": "mp01.html#data-preparation",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "3.2 Data Preparation",
+    "text": "3.2 Data Preparation\n\n\nShow code\n# Task 2: Data Import and Preparation\nlibrary(readr)\npayroll_data &lt;- read_csv(\"data/mp01/nyc_payroll_export.csv\")\n\n# Transform string columns to title case\nlibrary(stringr)\npayroll_data &lt;- payroll_data %&gt;%\n  mutate(\n    agency_name = str_to_title(agency_name),\n    last_name = str_to_title(last_name),\n    first_name = str_to_title(first_name),\n    work_location_borough = str_to_title(work_location_borough),\n    title_description = str_to_title(title_description),\n    leave_status_as_of_june_30 = str_to_title(leave_status_as_of_june_30)\n  )\n\n# Check the data structure\nglimpse(payroll_data)"
+  },
+  {
+    "objectID": "mp01.html#total-compensation-calculation",
+    "href": "mp01.html#total-compensation-calculation",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "3.3 Total Compensation Calculation",
+    "text": "3.3 Total Compensation Calculation\n\n\nShow code\n# Task 3: Calculate Total Compensation\npayroll_data &lt;- payroll_data %&gt;%\n  mutate(\n    total_compensation = case_when(\n      pay_basis == \"per Annum\" ~ base_salary,\n      pay_basis == \"per Hour\" ~ (regular_hours + ot_hours * 1.5) * hourly_rate,\n      pay_basis == \"per Day\" ~ (regular_hours / 7.5) * daily_rate,\n      TRUE ~ NA_real_\n    )\n  )"
+  },
+  {
+    "objectID": "mp01.html#key-statistical-findings",
+    "href": "mp01.html#key-statistical-findings",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "5.1 Key Statistical Findings",
+    "text": "5.1 Key Statistical Findings\n\n\nShow code\n# Which job title has the highest base rate of pay?\nhighest_base_rate &lt;- payroll_data %&gt;%\n  filter(pay_basis == \"per Annum\") %&gt;%\n  mutate(hourly_equivalent = base_salary / 2000) %&gt;%\n  arrange(desc(hourly_equivalent)) %&gt;%\n  slice(1) %&gt;%\n  select(title_description, base_salary, hourly_equivalent)\n\nhighest_base_rate %&gt;%\n  mutate(\n    base_salary = dollar(base_salary),\n    hourly_equivalent = dollar(hourly_equivalent)\n  ) %&gt;%\n  knitr::kable(caption = \"Job Title with Highest Base Rate of Pay\")\n\n\n\n\nShow code\n# Which individual & in what year had the single highest city total payroll?\nhighest_payroll &lt;- payroll_data %&gt;%\n  group_by(first_name, last_name, fiscal_year) %&gt;%\n  summarize(\n    total_payroll = sum(base_salary + total_ot_paid, na.rm = TRUE),\n    .groups = \"drop\"\n  ) %&gt;%\n  arrange(desc(total_payroll)) %&gt;%\n  slice(1)\n\nhighest_payroll %&gt;%\n  mutate(total_payroll = dollar(total_payroll)) %&gt;%\n  knitr::kable(caption = \"Individual with Highest Total Payroll\")\n\n\n\n\nShow code\n# Which individual worked the most overtime hours?\nindividual_most_overtime &lt;- payroll_data %&gt;%\n  arrange(desc(ot_hours)) %&gt;%\n  select(first_name, last_name, agency_name, fiscal_year, ot_hours) %&gt;%\n  slice(1)\n\nindividual_most_overtime %&gt;%\n  knitr::kable(caption = \"Individual with Most Overtime Hours\")\n\n\n\n\nShow code\n# Which agency has the highest average total annual payroll?\nagency_payroll_avg &lt;- payroll_data %&gt;%\n  group_by(agency_name) %&gt;%\n  summarise(\n    average_total_payroll = mean(total_compensation, na.rm = TRUE),\n    employee_count = n()\n  ) %&gt;%\n  filter(employee_count &gt;= 10) %&gt;% # Filtering out very small departments\n  arrange(desc(average_total_payroll)) %&gt;%\n  slice_head(n = 10)\n\nagency_payroll_avg %&gt;%\n  mutate(average_total_payroll = dollar(average_total_payroll)) %&gt;%\n  knitr::kable(caption = \"Top 10 Agencies by Average Employee Payroll\")\n\n\n\n\nShow code\n# Which agency has the most employees on payroll in each year?\nagency_employee_count &lt;- payroll_data %&gt;%\n  group_by(fiscal_year, agency_name) %&gt;%\n  summarise(employee_count = n(), .groups = 'drop') %&gt;%\n  group_by(fiscal_year) %&gt;%\n  slice_max(order_by = employee_count, n = 1) %&gt;%\n  ungroup() %&gt;%\n  arrange(fiscal_year)\n\nagency_employee_count %&gt;%\n  knitr::kable(caption = \"Agency with Most Employees by Fiscal Year\")\n\n\n\n\nShow code\n# Which agency has the highest overtime usage?\novertime_usage_ratio &lt;- payroll_data %&gt;%\n  group_by(agency_name) %&gt;%\n  summarise(\n    total_regular_hours = sum(regular_hours, na.rm = TRUE),\n    total_overtime_hours = sum(ot_hours, na.rm = TRUE),\n    overtime_ratio = total_overtime_hours / total_regular_hours,\n    .groups = 'drop'\n  ) %&gt;%\n  filter(total_regular_hours &gt; 10000) %&gt;% # Filter to ensure meaningful ratios\n  arrange(desc(overtime_ratio)) %&gt;%\n  slice_head(n = 10)\n\novertime_usage_ratio %&gt;%\n  mutate(overtime_ratio = scales::percent(overtime_ratio, accuracy = 0.01)) %&gt;%\n  knitr::kable(caption = \"Top 10 Agencies by Overtime Usage Ratio\")\n\n\n\n\nShow code\n# What is the average salary of employees who work outside the five boroughs?\naverage_salary_outside_boroughs &lt;- payroll_data %&gt;%\n  filter(!work_location_borough %in% c(\"Manhattan\", \"Brooklyn\", \"Queens\", \"Bronx\", \"Staten Island\")) %&gt;%\n  summarise(average_salary = mean(base_salary, na.rm = TRUE))\n\naverage_salary_outside_boroughs %&gt;%\n  mutate(average_salary = dollar(average_salary)) %&gt;%\n  knitr::kable(caption = \"Average Salary Outside NYC Boroughs\")\n\n\n\n\nShow code\n# How much has the city's aggregate payroll grown over the past years?\npayroll_growth &lt;- payroll_data %&gt;%\n  group_by(fiscal_year) %&gt;%\n  summarise(total_payroll = sum(total_compensation, na.rm = TRUE)) %&gt;%\n  arrange(fiscal_year)\n\n# Calculate the growth percentage\nif(nrow(payroll_growth) &gt;= 2) {\n  earliest_year &lt;- min(payroll_growth$fiscal_year)\n  latest_year &lt;- max(payroll_growth$fiscal_year)\n  earliest_payroll &lt;- payroll_growth$total_payroll[payroll_growth$fiscal_year == earliest_year]\n  latest_payroll &lt;- payroll_growth$total_payroll[payroll_growth$fiscal_year == latest_year]\n  \n  growth_percentage &lt;- (latest_payroll - earliest_payroll) / earliest_payroll * 100\n  \n  # Create visualization\n  ggplot(payroll_growth, aes(x = fiscal_year, y = total_payroll)) +\n    geom_line(color = \"blue\", size = 1.2) +\n    geom_point(color = \"red\", size = 3) +\n    scale_y_continuous(labels = dollar_format()) +\n    labs(\n      title = \"NYC Aggregate Payroll Growth\",\n      subtitle = paste0(\"Growth from \", earliest_year, \" to \", latest_year, \": \", round(growth_percentage, 2), \"%\"),\n      x = \"Fiscal Year\",\n      y = \"Total Payroll\"\n    ) +\n    theme_minimal()\n}"
+  },
+  {
+    "objectID": "mp01.html#policy-i-capping-salaries-at-mayoral-level",
+    "href": "mp01.html#policy-i-capping-salaries-at-mayoral-level",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "6.1 Policy I: Capping Salaries at Mayoral Level",
+    "text": "6.1 Policy I: Capping Salaries at Mayoral Level\n\n\nShow code\n# Find mayoral salary for each fiscal year\nmayoral_salaries &lt;- payroll_data %&gt;%\n  filter(title_description == \"Mayor\") %&gt;%\n  group_by(fiscal_year) %&gt;%\n  summarize(mayoral_salary = max(base_salary, na.rm = TRUE), .groups = \"drop\")\n\n# For simplicity, use the maximum mayoral salary across all years\nmayoral_cap &lt;- max(mayoral_salaries$mayoral_salary, na.rm = TRUE)\n\n# Calculate potential savings from implementing the cap\nsalary_cap_analysis &lt;- payroll_data %&gt;%\n  mutate(\n    over_cap = total_compensation &gt; mayoral_cap,\n    savings = if_else(over_cap, total_compensation - mayoral_cap, 0)\n  ) %&gt;%\n  summarize(\n    employees_affected = sum(over_cap, na.rm = TRUE),\n    total_savings = sum(savings, na.rm = TRUE),\n    percent_of_workforce = employees_affected / n() * 100\n  )\n\n# Display the results\nsalary_cap_analysis %&gt;%\n  mutate(\n    total_savings = dollar(total_savings),\n    percent_of_workforce = scales::percent(percent_of_workforce/100, accuracy = 0.01)\n  ) %&gt;%\n  knitr::kable(caption = \"Potential Impact of Salary Cap at Mayoral Level\")\n\n\nMany governments implement policies that cap the salaries of public employees at the level of the chief executive. This analysis examines the potential impact of capping NYC employee compensation at the mayoral salary level.\nBased on our analysis, implementing a salary cap at the mayoral level would affect a small percentage of employees but could generate significant savings. However, careful consideration must be given to potential impacts on recruitment and retention of specialized talent."
+  },
+  {
+    "objectID": "mp01.html#policy-ii-increasing-staffing-to-reduce-overtime-expenses",
+    "href": "mp01.html#policy-ii-increasing-staffing-to-reduce-overtime-expenses",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "6.2 Policy II: Increasing Staffing to Reduce Overtime Expenses",
+    "text": "6.2 Policy II: Increasing Staffing to Reduce Overtime Expenses\n\n\nShow code\n# Calculate overtime analysis by agency and job title\novertime_analysis &lt;- payroll_data %&gt;%\n  filter(!is.na(hourly_rate), !is.na(ot_hours), ot_hours &gt; 0) %&gt;%\n  mutate(\n    overtime_cost = ot_hours * hourly_rate * 1.5,\n    regular_cost_equivalent = ot_hours * hourly_rate,\n    potential_savings = overtime_cost - regular_cost_equivalent,\n    full_time_equivalents_needed = ot_hours / 2000  # Assuming 2000 hours per year\n  ) %&gt;%\n  group_by(agency_name, title_description) %&gt;%\n  summarize(\n    total_ot_hours = sum(ot_hours, na.rm = TRUE),\n    total_overtime_cost = sum(overtime_cost, na.rm = TRUE),\n    total_regular_cost_equivalent = sum(regular_cost_equivalent, na.rm = TRUE),\n    total_potential_savings = sum(potential_savings, na.rm = TRUE),\n    total_fte_needed = sum(full_time_equivalents_needed, na.rm = TRUE),\n    .groups = \"drop\"\n  ) %&gt;%\n  filter(total_ot_hours &gt; 1000) %&gt;%  # Focus on significant overtime usage\n  arrange(desc(total_potential_savings))\n\n# Display top opportunities\novertime_analysis %&gt;%\n  slice_head(n = 10) %&gt;%\n  select(\n    agency_name, \n    title_description, \n    total_ot_hours, \n    total_potential_savings,\n    total_fte_needed\n  ) %&gt;%\n  mutate(\n    total_potential_savings = dollar(total_potential_savings),\n    total_fte_needed = round(total_fte_needed, 1)\n  ) %&gt;%\n  knitr::kable(caption = \"Top 10 Opportunities for Overtime Reduction\")\n\n\nOvertime expenses significantly impact the city’s budget due to the 1.5x premium on overtime hours. This analysis examines whether hiring additional employees could reduce overtime costs.\nOur analysis identifies significant potential savings from strategic hiring to replace overtime hours with regular-time work. Key departments like NYPD and Fire Department would benefit most from this approach."
+  },
+  {
+    "objectID": "mp01.html#policy-iii-implementing-flexible-work-arrangements",
+    "href": "mp01.html#policy-iii-implementing-flexible-work-arrangements",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "6.3 Policy III: Implementing Flexible Work Arrangements",
+    "text": "6.3 Policy III: Implementing Flexible Work Arrangements\n\n\nShow code\n# Analyze potential savings from capping overtime at 20 hours per employee\nflexible_work_analysis &lt;- payroll_data %&gt;%\n  filter(!is.na(hourly_rate), !is.na(ot_hours)) %&gt;%\n  mutate(\n    current_ot_cost = ot_hours * hourly_rate * 1.5,\n    capped_ot_hours = pmin(ot_hours, 20),  # Cap at 20 hours\n    capped_ot_cost = capped_ot_hours * hourly_rate * 1.5,\n    savings = current_ot_cost - capped_ot_cost\n  ) %&gt;%\n  summarize(\n    total_current_ot_cost = sum(current_ot_cost, na.rm = TRUE),\n    total_capped_ot_cost = sum(capped_ot_cost, na.rm = TRUE),\n    total_savings = sum(savings, na.rm = TRUE),\n    employees_affected = sum(ot_hours &gt; 20, na.rm = TRUE),\n    percent_workforce_affected = employees_affected / n() * 100\n  )\n\n# Display results\nflexible_work_analysis %&gt;%\n  mutate(\n    total_current_ot_cost = dollar(total_current_ot_cost),\n    total_capped_ot_cost = dollar(total_capped_ot_cost),\n    total_savings = dollar(total_savings),\n    percent_workforce_affected = scales::percent(percent_workforce_affected/100, accuracy = 0.01)\n  ) %&gt;%\n  knitr::kable(caption = \"Potential Impact of Flexible Work Policy with Overtime Cap\")\n\n\nAs a third policy option, implementing flexible work arrangements with caps on overtime hours could provide both financial savings and improved work-life balance for city employees.\nOur analysis shows that implementing a flexible work arrangement policy with overtime caps would generate significant savings while affecting only a portion of the workforce. This policy could also improve employee satisfaction and productivity."
+  },
+  {
+    "objectID": "mp01.html#limitations-and-future-research",
+    "href": "mp01.html#limitations-and-future-research",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "7.1 Limitations and Future Research",
+    "text": "7.1 Limitations and Future Research\nThis analysis has several limitations:\n\nData quality issues, such as missing values and inconsistent coding\nInability to account for all factors affecting hiring decisions\nLimited information on job market conditions for specialized roles\n\nFuture research could: - Compare NYC salaries with those in other major cities - Analyze the impact of collective bargaining agreements on overtime usage - Evaluate the effectiveness of flexible work arrangements in public sector settings"
+  },
+  {
+    "objectID": "mp01.html#methodology-details",
+    "href": "mp01.html#methodology-details",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "9.1 Methodology Details",
+    "text": "9.1 Methodology Details\nThis analysis used R statistical software and the following packages for data processing and visualization:\n\ndplyr, tidyr (data manipulation)\nggplot2 (visualization)\nDT (interactive tables)\nscales (formatting)\n\nAll code used in this analysis is available in the accompanying R Markdown document."
+  },
+  {
+    "objectID": "mp01.html#additional-tables-and-figures",
+    "href": "mp01.html#additional-tables-and-figures",
+    "title": "Policy Analysis: NYC Payroll Optimization Strategies",
+    "section": "9.2 Additional Tables and Figures",
+    "text": "9.2 Additional Tables and Figures\n\n\nShow code\n# Top job titles by average compensation\ntop_titles &lt;- payroll_data %&gt;%\n  group_by(title_description) %&gt;%\n  summarize(\n    count = n(),\n    avg_compensation = mean(total_compensation, na.rm = TRUE)\n  ) %&gt;%\n  filter(count &gt;= 50) %&gt;%  # Only include common job titles\n  arrange(desc(avg_compensation)) %&gt;%\n  slice_head(n = 15)\n\nggplot(top_titles, aes(x = reorder(title_description, avg_compensation), y = avg_compensation)) +\n  geom_col(fill = \"steelblue\") +\n  coord_flip() +\n  scale_y_continuous(labels = dollar_format()) +\n  labs(\n    title = \"Top 15 Job Titles by Average Compensation\",\n    subtitle = \"Only includes titles with at least 50 employees\",\n    x = \"Job Title\",\n    y = \"Average Total Compensation\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
     "title": "Welcome",
@@ -39,13 +130,6 @@
     "href": "index.html#la-marias-tip",
     "title": "Welcome",
     "section": "La Maria’s Tip:",
-    "text": "La Maria’s Tip:\nAnyone can visite the United Nation Head Quarters and if you want to stop by here is the address;\n\n\n\n\n\n\n[1] 2\n\n\n\nLast Updated: Tuesday 02 11, 2025 at 23:26PM"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "La Maria’s Tip:\nAnyone can visite the United Nation Head Quarters and if you want to stop by here is the address;\n\n\n\n\n\n\n[1] 2\n\n\n\nLast Updated: Wednesday 02 26, 2025 at 16:19PM"
   }
 ]

@@ -1,1 +1,1 @@
-Sitemap: https://<GITHUB_NAME>.github.io/STA9750-2025-SPRING/sitemap.xml
+Sitemap: https://github.com/LaMariah/STA9750-2025-SPRING/sitemap.xml

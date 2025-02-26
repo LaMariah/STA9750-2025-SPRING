@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://&lt;GITHUB_NAME&gt;.github.io/STA9750-2025-SPRING/index.html</loc>
-    <lastmod>2025-02-12T04:22:14.890Z</lastmod>
+    <loc>https://github.com/LaMariah/STA9750-2025-SPRING/mp01.html</loc>
+    <lastmod>2025-02-26T21:18:42.268Z</lastmod>
   </url>
   <url>
-    <loc>https://&lt;GITHUB_NAME&gt;.github.io/STA9750-2025-SPRING/about.html</loc>
+    <loc>https://github.com/LaMariah/STA9750-2025-SPRING/about.html</loc>
     <lastmod>2025-02-12T04:05:57.905Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/LaMariah/STA9750-2025-SPRING/index.html</loc>
+    <lastmod>2025-02-12T04:22:14.890Z</lastmod>
   </url>
 </urlset>
