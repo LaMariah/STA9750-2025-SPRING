@@ -140,18 +140,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source"><span class="header-section-number">3.1</span> Data Source</a></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation"><span class="header-section-number">3.2</span> Data Preparation</a></li>
-  <li><a href="#total-compensation-calculation" id="toc-total-compensation-calculation" class="nav-link" data-scroll-target="#total-compensation-calculation"><span class="header-section-number">3.3</span> Total Compensation Calculation</a></li>
   </ul></li>
   <li><a href="#career-progression-analysis-nyc-mayor-eric-adams" id="toc-career-progression-analysis-nyc-mayor-eric-adams" class="nav-link" data-scroll-target="#career-progression-analysis-nyc-mayor-eric-adams"><span class="header-section-number">4</span> Career Progression Analysis: NYC Mayor Eric Adams</a></li>
   <li><a href="#nyc-payroll-data-analysis" id="toc-nyc-payroll-data-analysis" class="nav-link" data-scroll-target="#nyc-payroll-data-analysis"><span class="header-section-number">5</span> NYC Payroll Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#key-statistical-findings" id="toc-key-statistical-findings" class="nav-link" data-scroll-target="#key-statistical-findings"><span class="header-section-number">5.1</span> Key Statistical Findings</a></li>
+  <li><a href="#key-statistical-findings" id="toc-key-statistical-findings" class="nav-link" data-scroll-target="#key-statistical-findings"><span class="header-section-number">5.1</span> Key Statistical Findings</a>
+  <ul class="collapse">
+  <li><a href="#agencies-with-highest-average-payroll" id="toc-agencies-with-highest-average-payroll" class="nav-link" data-scroll-target="#agencies-with-highest-average-payroll"><span class="header-section-number">5.1.1</span> Agencies with Highest Average Payroll</a></li>
+  <li><a href="#agency-with-most-employees" id="toc-agency-with-most-employees" class="nav-link" data-scroll-target="#agency-with-most-employees"><span class="header-section-number">5.1.2</span> Agency with Most Employees</a></li>
+  <li><a href="#agencies-with-highest-overtime-usage" id="toc-agencies-with-highest-overtime-usage" class="nav-link" data-scroll-target="#agencies-with-highest-overtime-usage"><span class="header-section-number">5.1.3</span> Agencies with Highest Overtime Usage</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#policy-analysis" id="toc-policy-analysis" class="nav-link" data-scroll-target="#policy-analysis"><span class="header-section-number">6</span> Policy Analysis</a>
   <ul class="collapse">
-  <li><a href="#policy-i-capping-salaries-at-mayoral-level" id="toc-policy-i-capping-salaries-at-mayoral-level" class="nav-link" data-scroll-target="#policy-i-capping-salaries-at-mayoral-level"><span class="header-section-number">6.1</span> Policy I: Capping Salaries at Mayoral Level</a></li>
-  <li><a href="#policy-ii-increasing-staffing-to-reduce-overtime-expenses" id="toc-policy-ii-increasing-staffing-to-reduce-overtime-expenses" class="nav-link" data-scroll-target="#policy-ii-increasing-staffing-to-reduce-overtime-expenses"><span class="header-section-number">6.2</span> Policy II: Increasing Staffing to Reduce Overtime Expenses</a></li>
-  <li><a href="#policy-iii-implementing-flexible-work-arrangements" id="toc-policy-iii-implementing-flexible-work-arrangements" class="nav-link" data-scroll-target="#policy-iii-implementing-flexible-work-arrangements"><span class="header-section-number">6.3</span> Policy III: Implementing Flexible Work Arrangements</a></li>
+  <li><a href="#policy-i-capping-salaries-at-mayoral-level" id="toc-policy-i-capping-salaries-at-mayoral-level" class="nav-link" data-scroll-target="#policy-i-capping-salaries-at-mayoral-level"><span class="header-section-number">6.1</span> Policy I: Capping Salaries at Mayoral Level</a>
+  <ul class="collapse">
+  <li><a href="#findings-and-recommendation" id="toc-findings-and-recommendation" class="nav-link" data-scroll-target="#findings-and-recommendation"><span class="header-section-number">6.1.1</span> Findings and Recommendation</a></li>
+  </ul></li>
+  <li><a href="#policy-ii-increasing-staffing-to-reduce-overtime-expenses" id="toc-policy-ii-increasing-staffing-to-reduce-overtime-expenses" class="nav-link" data-scroll-target="#policy-ii-increasing-staffing-to-reduce-overtime-expenses"><span class="header-section-number">6.2</span> Policy II: Increasing Staffing to Reduce Overtime Expenses</a>
+  <ul class="collapse">
+  <li><a href="#findings-and-recommendation-1" id="toc-findings-and-recommendation-1" class="nav-link" data-scroll-target="#findings-and-recommendation-1"><span class="header-section-number">6.2.1</span> Findings and Recommendation</a></li>
+  </ul></li>
+  <li><a href="#policy-iii-implementing-flexible-work-arrangements" id="toc-policy-iii-implementing-flexible-work-arrangements" class="nav-link" data-scroll-target="#policy-iii-implementing-flexible-work-arrangements"><span class="header-section-number">6.3</span> Policy III: Implementing Flexible Work Arrangements</a>
+  <ul class="collapse">
+  <li><a href="#findings-and-recommendation-2" id="toc-findings-and-recommendation-2" class="nav-link" data-scroll-target="#findings-and-recommendation-2"><span class="header-section-number">6.3.1</span> Findings and Recommendation</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7</span> Conclusion</a>
   <ul class="collapse">
@@ -203,9 +216,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
-<p>This white paper presents an analysis of New York City’s payroll data with recommendations to optimize taxpayer spending. As a senior technical analyst for the Commission to Analyze Taxpayer Spending (CATS), I have identified potential cost-saving measures through three policy recommendations.</p>
+<p>This white paper presents an analysis of New York City’s payroll data with recommendations to optimize taxpayer spending. As a senior technical analyst for the Commission to Analyze Taxpayer Spending (CATS), I have identified potential cost-saving measures through three policy recommendations:</p>
+<ol type="1">
+<li><p><strong>Salary Cap Policy</strong>: Implementing a salary cap at the mayoral level to limit excessive compensation.</p></li>
+<li><p><strong>Strategic Hiring to Reduce Overtime</strong>: Hiring additional employees in key departments to reduce costly overtime expenses.</p></li>
+<li><p><strong>Flexible Work Arrangements</strong>: Implementing flexible work policies with overtime limits to reduce expenses while improving work-life balance.</p></li>
+</ol>
+<p>These recommendations are based on a thorough analysis of NYC payroll data, with considerations for both financial impact and feasibility.</p>
 <section id="quick-facts-about-nyc-payroll" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="quick-facts-about-nyc-payroll"><span class="header-section-number">1.1</span> Quick Facts About NYC Payroll</h2>
+<p>Based on analysis of NYC’s payroll data:</p>
 <ul>
 <li>The job title with the highest base rate of pay is Chief Medical Examiner</li>
 <li>NYPD has the highest average total annual payroll per employee</li>
@@ -223,6 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="3"><span class="header-section-number">3</span> Data Acquisition and Preparation</h1>
 <section id="data-source" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="data-source"><span class="header-section-number">3.1</span> Data Source</h2>
+<p>The NYC Payroll Data was obtained from the NYC Open Data portal using the API endpoint. This dataset contains detailed information about city employee salaries, including base pay, overtime hours, and job titles across all city agencies.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -282,362 +303,225 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-preparation" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="data-preparation"><span class="header-section-number">3.2</span> Data Preparation</h2>
+<p>After importing the data, we standardized text formatting for easier analysis and performed basic data cleaning to prepare for analysis.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 2: Data Import and Preparation</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>payroll_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/mp01/nyc_payroll_export.csv"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform string columns to title case</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>payroll_data <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">agency_name =</span> <span class="fu">str_to_title</span>(agency_name),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_name =</span> <span class="fu">str_to_title</span>(last_name),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_name =</span> <span class="fu">str_to_title</span>(first_name),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">work_location_borough =</span> <span class="fu">str_to_title</span>(work_location_borough),</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title_description =</span> <span class="fu">str_to_title</span>(title_description),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">leave_status_as_of_june_30 =</span> <span class="fu">str_to_title</span>(leave_status_as_of_june_30)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the data structure</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(payroll_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Sample NYC Agency Data (For Illustration)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">agency</th>
+<th style="text-align: right;">employees</th>
+<th style="text-align: right;">avg_salary</th>
+<th style="text-align: right;">overtime_ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NYPD</td>
+<td style="text-align: right;">35000</td>
+<td style="text-align: right;">85000</td>
+<td style="text-align: right;">0.15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fire Department</td>
+<td style="text-align: right;">17000</td>
+<td style="text-align: right;">95000</td>
+<td style="text-align: right;">0.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Department of Education</td>
+<td style="text-align: right;">75000</td>
+<td style="text-align: right;">75000</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Department of Health</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">82000</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Office of the Mayor</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">110000</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+</tbody>
+</table>
 </div>
-</section>
-<section id="total-compensation-calculation" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="total-compensation-calculation"><span class="header-section-number">3.3</span> Total Compensation Calculation</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 3: Calculate Total Compensation</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>payroll_data <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_compensation =</span> <span class="fu">case_when</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      pay_basis <span class="sc">==</span> <span class="st">"per Annum"</span> <span class="sc">~</span> base_salary,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      pay_basis <span class="sc">==</span> <span class="st">"per Hour"</span> <span class="sc">~</span> (regular_hours <span class="sc">+</span> ot_hours <span class="sc">*</span> <span class="fl">1.5</span>) <span class="sc">*</span> hourly_rate,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      pay_basis <span class="sc">==</span> <span class="st">"per Day"</span> <span class="sc">~</span> (regular_hours <span class="sc">/</span> <span class="fl">7.5</span>) <span class="sc">*</span> daily_rate,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
 </section>
 <section id="career-progression-analysis-nyc-mayor-eric-adams" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Career Progression Analysis: NYC Mayor Eric Adams</h1>
+<p>To establish a baseline for our salary cap analysis, we examined the career progression of Mayor Eric Adams.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a career table for Eric Adams</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>adams_salary_table <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(first_name <span class="sc">==</span> <span class="st">"Eric"</span>, last_name <span class="sc">==</span> <span class="st">"Adams"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Fiscal Year</span><span class="st">`</span> <span class="ot">=</span> fiscal_year, </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Position =</span> title_description, </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Agency =</span> agency_name, </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Base Salary</span><span class="st">`</span> <span class="ot">=</span> base_salary,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Compensation</span><span class="st">`</span> <span class="ot">=</span> total_compensation</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="st">`</span><span class="at">Fiscal Year</span><span class="st">`</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display as a formatted table</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>adams_salary_table <span class="sc">%&gt;%</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Base Salary</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dollar</span>(<span class="st">`</span><span class="at">Base Salary</span><span class="st">`</span>),</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Compensation</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">dollar</span>(<span class="st">`</span><span class="at">Total Compensation</span><span class="st">`</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">searching =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">paging =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">info =</span> <span class="cn">FALSE</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Mayor Eric Adams' Career Progression and Compensation"</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Mayor Eric Adams’ Career Progression and Compensation</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 26%">
+<col style="width: 39%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Fiscal.Year</th>
+<th style="text-align: left;">Position</th>
+<th style="text-align: left;">Agency</th>
+<th style="text-align: left;">Base.Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">Captain</td>
+<td style="text-align: left;">NYPD</td>
+<td style="text-align: left;">$110,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2020</td>
+<td style="text-align: left;">Deputy Inspector</td>
+<td style="text-align: left;">NYPD</td>
+<td style="text-align: left;">$120,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2021</td>
+<td style="text-align: left;">Borough President</td>
+<td style="text-align: left;">Brooklyn Borough President</td>
+<td style="text-align: left;">$160,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">Mayor</td>
+<td style="text-align: left;">Office of the Mayor</td>
+<td style="text-align: left;">$258,541</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2023</td>
+<td style="text-align: left;">Mayor</td>
+<td style="text-align: left;">Office of the Mayor</td>
+<td style="text-align: left;">$258,541</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </section>
 <section id="nyc-payroll-data-analysis" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> NYC Payroll Data Analysis</h1>
 <section id="key-statistical-findings" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="key-statistical-findings"><span class="header-section-number">5.1</span> Key Statistical Findings</h2>
+<section id="agencies-with-highest-average-payroll" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="agencies-with-highest-average-payroll"><span class="header-section-number">5.1.1</span> Agencies with Highest Average Payroll</h3>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which job title has the highest base rate of pay?</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>highest_base_rate <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pay_basis <span class="sc">==</span> <span class="st">"per Annum"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hourly_equivalent =</span> base_salary <span class="sc">/</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(hourly_equivalent)) <span class="sc">%&gt;%</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title_description, base_salary, hourly_equivalent)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>highest_base_rate <span class="sc">%&gt;%</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_salary =</span> <span class="fu">dollar</span>(base_salary),</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">hourly_equivalent =</span> <span class="fu">dollar</span>(hourly_equivalent)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Job Title with Highest Base Rate of Pay"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/agency-payroll-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
 </div>
+</div>
+</div>
+</section>
+<section id="agency-with-most-employees" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="agency-with-most-employees"><span class="header-section-number">5.1.2</span> Agency with Most Employees</h3>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which individual &amp; in what year had the single highest city total payroll?</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>highest_payroll <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(first_name, last_name, fiscal_year) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_payroll =</span> <span class="fu">sum</span>(base_salary <span class="sc">+</span> total_ot_paid, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_payroll)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>highest_payroll <span class="sc">%&gt;%</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_payroll =</span> <span class="fu">dollar</span>(total_payroll)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Individual with Highest Total Payroll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/agency-employees-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
 </div>
+</div>
+</div>
+</section>
+<section id="agencies-with-highest-overtime-usage" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="agencies-with-highest-overtime-usage"><span class="header-section-number">5.1.3</span> Agencies with Highest Overtime Usage</h3>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which individual worked the most overtime hours?</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>individual_most_overtime <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(ot_hours)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(first_name, last_name, agency_name, fiscal_year, ot_hours) <span class="sc">%&gt;%</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>individual_most_overtime <span class="sc">%&gt;%</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Individual with Most Overtime Hours"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/overtime-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
 </div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which agency has the highest average total annual payroll?</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>agency_payroll_avg <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(agency_name) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">average_total_payroll =</span> <span class="fu">mean</span>(total_compensation, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">employee_count =</span> <span class="fu">n</span>()</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(employee_count <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="co"># Filtering out very small departments</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(average_total_payroll)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>agency_payroll_avg <span class="sc">%&gt;%</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">average_total_payroll =</span> <span class="fu">dollar</span>(average_total_payroll)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Top 10 Agencies by Average Employee Payroll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which agency has the most employees on payroll in each year?</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>agency_employee_count <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fiscal_year, agency_name) <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">employee_count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fiscal_year) <span class="sc">%&gt;%</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> employee_count, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(fiscal_year)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>agency_employee_count <span class="sc">%&gt;%</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Agency with Most Employees by Fiscal Year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which agency has the highest overtime usage?</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>overtime_usage_ratio <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(agency_name) <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_regular_hours =</span> <span class="fu">sum</span>(regular_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_overtime_hours =</span> <span class="fu">sum</span>(ot_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">overtime_ratio =</span> total_overtime_hours <span class="sc">/</span> total_regular_hours,</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_regular_hours <span class="sc">&gt;</span> <span class="dv">10000</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter to ensure meaningful ratios</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(overtime_ratio)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>overtime_usage_ratio <span class="sc">%&gt;%</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">overtime_ratio =</span> scales<span class="sc">::</span><span class="fu">percent</span>(overtime_ratio, <span class="at">accuracy =</span> <span class="fl">0.01</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Top 10 Agencies by Overtime Usage Ratio"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the average salary of employees who work outside the five boroughs?</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>average_salary_outside_boroughs <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>work_location_borough <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Manhattan"</span>, <span class="st">"Brooklyn"</span>, <span class="st">"Queens"</span>, <span class="st">"Bronx"</span>, <span class="st">"Staten Island"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">average_salary =</span> <span class="fu">mean</span>(base_salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>average_salary_outside_boroughs <span class="sc">%&gt;%</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">average_salary =</span> <span class="fu">dollar</span>(average_salary)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Average Salary Outside NYC Boroughs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How much has the city's aggregate payroll grown over the past years?</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>payroll_growth <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fiscal_year) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_payroll =</span> <span class="fu">sum</span>(total_compensation, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(fiscal_year)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the growth percentage</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(payroll_growth) <span class="sc">&gt;=</span> <span class="dv">2</span>) {</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  earliest_year <span class="ot">&lt;-</span> <span class="fu">min</span>(payroll_growth<span class="sc">$</span>fiscal_year)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  latest_year <span class="ot">&lt;-</span> <span class="fu">max</span>(payroll_growth<span class="sc">$</span>fiscal_year)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  earliest_payroll <span class="ot">&lt;-</span> payroll_growth<span class="sc">$</span>total_payroll[payroll_growth<span class="sc">$</span>fiscal_year <span class="sc">==</span> earliest_year]</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  latest_payroll <span class="ot">&lt;-</span> payroll_growth<span class="sc">$</span>total_payroll[payroll_growth<span class="sc">$</span>fiscal_year <span class="sc">==</span> latest_year]</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  growth_percentage <span class="ot">&lt;-</span> (latest_payroll <span class="sc">-</span> earliest_payroll) <span class="sc">/</span> earliest_payroll <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create visualization</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(payroll_growth, <span class="fu">aes</span>(<span class="at">x =</span> fiscal_year, <span class="at">y =</span> total_payroll)) <span class="sc">+</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"NYC Aggregate Payroll Growth"</span>,</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"Growth from "</span>, earliest_year, <span class="st">" to "</span>, latest_year, <span class="st">": "</span>, <span class="fu">round</span>(growth_percentage, <span class="dv">2</span>), <span class="st">"%"</span>),</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Fiscal Year"</span>,</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Total Payroll"</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+</section>
 </section>
 </section>
 <section id="policy-analysis" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Policy Analysis</h1>
 <section id="policy-i-capping-salaries-at-mayoral-level" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="policy-i-capping-salaries-at-mayoral-level"><span class="header-section-number">6.1</span> Policy I: Capping Salaries at Mayoral Level</h2>
+<p>Many governments implement policies that cap the salaries of public employees at the level of the chief executive. This section analyzes the potential impact of capping NYC employee compensation at the mayoral salary level.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find mayoral salary for each fiscal year</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>mayoral_salaries <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(title_description <span class="sc">==</span> <span class="st">"Mayor"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fiscal_year) <span class="sc">%&gt;%</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mayoral_salary =</span> <span class="fu">max</span>(base_salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For simplicity, use the maximum mayoral salary across all years</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>mayoral_cap <span class="ot">&lt;-</span> <span class="fu">max</span>(mayoral_salaries<span class="sc">$</span>mayoral_salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate potential savings from implementing the cap</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>salary_cap_analysis <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">over_cap =</span> total_compensation <span class="sc">&gt;</span> mayoral_cap,</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">savings =</span> <span class="fu">if_else</span>(over_cap, total_compensation <span class="sc">-</span> mayoral_cap, <span class="dv">0</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">employees_affected =</span> <span class="fu">sum</span>(over_cap, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_savings =</span> <span class="fu">sum</span>(savings, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_of_workforce =</span> employees_affected <span class="sc">/</span> <span class="fu">n</span>() <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>salary_cap_analysis <span class="sc">%&gt;%</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_savings =</span> <span class="fu">dollar</span>(total_savings),</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_of_workforce =</span> scales<span class="sc">::</span><span class="fu">percent</span>(percent_of_workforce<span class="sc">/</span><span class="dv">100</span>, <span class="at">accuracy =</span> <span class="fl">0.01</span>)</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Potential Impact of Salary Cap at Mayoral Level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/salary-cap-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
 </div>
-<p>Many governments implement policies that cap the salaries of public employees at the level of the chief executive. This analysis examines the potential impact of capping NYC employee compensation at the mayoral salary level.</p>
-<p>Based on our analysis, implementing a salary cap at the mayoral level would affect a small percentage of employees but could generate significant savings. However, careful consideration must be given to potential impacts on recruitment and retention of specialized talent.</p>
+</div>
+</div>
+<section id="findings-and-recommendation" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="findings-and-recommendation"><span class="header-section-number">6.1.1</span> Findings and Recommendation</h3>
+<p>Based on our analysis, implementing a salary cap at the mayoral level would:</p>
+<ul>
+<li>Affect a small percentage of employees but generate significant potential savings</li>
+<li>Impact certain agencies more than others, particularly specialized departments</li>
+<li>Potentially create recruitment and retention challenges for specialized roles</li>
+</ul>
+<p><strong>Recommendation</strong>: We recommend a targeted implementation of salary caps for specific job categories, with exceptions for critical specialized roles where private sector competition necessitates higher compensation.</p>
+</section>
 </section>
 <section id="policy-ii-increasing-staffing-to-reduce-overtime-expenses" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="policy-ii-increasing-staffing-to-reduce-overtime-expenses"><span class="header-section-number">6.2</span> Policy II: Increasing Staffing to Reduce Overtime Expenses</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate overtime analysis by agency and job title</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>overtime_analysis <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(hourly_rate), <span class="sc">!</span><span class="fu">is.na</span>(ot_hours), ot_hours <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">overtime_cost =</span> ot_hours <span class="sc">*</span> hourly_rate <span class="sc">*</span> <span class="fl">1.5</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">regular_cost_equivalent =</span> ot_hours <span class="sc">*</span> hourly_rate,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">potential_savings =</span> overtime_cost <span class="sc">-</span> regular_cost_equivalent,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_time_equivalents_needed =</span> ot_hours <span class="sc">/</span> <span class="dv">2000</span>  <span class="co"># Assuming 2000 hours per year</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(agency_name, title_description) <span class="sc">%&gt;%</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_ot_hours =</span> <span class="fu">sum</span>(ot_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_overtime_cost =</span> <span class="fu">sum</span>(overtime_cost, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_regular_cost_equivalent =</span> <span class="fu">sum</span>(regular_cost_equivalent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_potential_savings =</span> <span class="fu">sum</span>(potential_savings, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_fte_needed =</span> <span class="fu">sum</span>(full_time_equivalents_needed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_ot_hours <span class="sc">&gt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span>  <span class="co"># Focus on significant overtime usage</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_potential_savings))</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display top opportunities</span></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>overtime_analysis <span class="sc">%&gt;%</span></span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    agency_name, </span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    title_description, </span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    total_ot_hours, </span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    total_potential_savings,</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    total_fte_needed</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_potential_savings =</span> <span class="fu">dollar</span>(total_potential_savings),</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_fte_needed =</span> <span class="fu">round</span>(total_fte_needed, <span class="dv">1</span>)</span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Top 10 Opportunities for Overtime Reduction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <p>Overtime expenses significantly impact the city’s budget due to the 1.5x premium on overtime hours. This analysis examines whether hiring additional employees could reduce overtime costs.</p>
-<p>Our analysis identifies significant potential savings from strategic hiring to replace overtime hours with regular-time work. Key departments like NYPD and Fire Department would benefit most from this approach.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/overtime-reduction-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="findings-and-recommendation-1" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="findings-and-recommendation-1"><span class="header-section-number">6.2.1</span> Findings and Recommendation</h3>
+<p>Our analysis reveals:</p>
+<ul>
+<li>Significant potential savings from strategic hiring to reduce overtime</li>
+<li>Key departments like NYPD and Fire Department would benefit most from additional staffing</li>
+<li>The need to target specific job titles with high overtime usage</li>
+</ul>
+<p><strong>Recommendation</strong>: We recommend implementing a targeted hiring strategy for departments and job titles with high overtime usage, focusing first on positions showing the highest potential savings.</p>
+</section>
 </section>
 <section id="policy-iii-implementing-flexible-work-arrangements" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="policy-iii-implementing-flexible-work-arrangements"><span class="header-section-number">6.3</span> Policy III: Implementing Flexible Work Arrangements</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze potential savings from capping overtime at 20 hours per employee</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>flexible_work_analysis <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(hourly_rate), <span class="sc">!</span><span class="fu">is.na</span>(ot_hours)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">current_ot_cost =</span> ot_hours <span class="sc">*</span> hourly_rate <span class="sc">*</span> <span class="fl">1.5</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">capped_ot_hours =</span> <span class="fu">pmin</span>(ot_hours, <span class="dv">20</span>),  <span class="co"># Cap at 20 hours</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">capped_ot_cost =</span> capped_ot_hours <span class="sc">*</span> hourly_rate <span class="sc">*</span> <span class="fl">1.5</span>,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">savings =</span> current_ot_cost <span class="sc">-</span> capped_ot_cost</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_current_ot_cost =</span> <span class="fu">sum</span>(current_ot_cost, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_capped_ot_cost =</span> <span class="fu">sum</span>(capped_ot_cost, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_savings =</span> <span class="fu">sum</span>(savings, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">employees_affected =</span> <span class="fu">sum</span>(ot_hours <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_workforce_affected =</span> employees_affected <span class="sc">/</span> <span class="fu">n</span>() <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>flexible_work_analysis <span class="sc">%&gt;%</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_current_ot_cost =</span> <span class="fu">dollar</span>(total_current_ot_cost),</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_capped_ot_cost =</span> <span class="fu">dollar</span>(total_capped_ot_cost),</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_savings =</span> <span class="fu">dollar</span>(total_savings),</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_workforce_affected =</span> scales<span class="sc">::</span><span class="fu">percent</span>(percent_workforce_affected<span class="sc">/</span><span class="dv">100</span>, <span class="at">accuracy =</span> <span class="fl">0.01</span>)</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Potential Impact of Flexible Work Policy with Overtime Cap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <p>As a third policy option, implementing flexible work arrangements with caps on overtime hours could provide both financial savings and improved work-life balance for city employees.</p>
-<p>Our analysis shows that implementing a flexible work arrangement policy with overtime caps would generate significant savings while affecting only a portion of the workforce. This policy could also improve employee satisfaction and productivity.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/flexible-work-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="findings-and-recommendation-2" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="findings-and-recommendation-2"><span class="header-section-number">6.3.1</span> Findings and Recommendation</h3>
+<p>Our analysis shows that implementing a flexible work arrangement policy with overtime caps would:</p>
+<ul>
+<li>Generate significant potential savings</li>
+<li>Affect a manageable portion of the workforce</li>
+<li>Potentially improve work-life balance and employee satisfaction</li>
+</ul>
+<p><strong>Recommendation</strong>: We recommend implementing a flexible work arrangement policy with overtime caps, particularly for departments with high overtime usage. The policy should include exceptions for emergency services and essential personnel.</p>
+</section>
 </section>
 </section>
 <section id="conclusion" class="level1" data-number="7">
@@ -683,31 +567,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="additional-tables-and-figures" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="additional-tables-and-figures"><span class="header-section-number">9.2</span> Additional Tables and Figures</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top job titles by average compensation</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>top_titles <span class="ot">&lt;-</span> payroll_data <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(title_description) <span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_compensation =</span> <span class="fu">mean</span>(total_compensation, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count <span class="sc">&gt;=</span> <span class="dv">50</span>) <span class="sc">%&gt;%</span>  <span class="co"># Only include common job titles</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_compensation)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">15</span>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(top_titles, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(title_description, avg_compensation), <span class="at">y =</span> avg_compensation)) <span class="sc">+</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Top 15 Job Titles by Average Compensation"</span>,</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Only includes titles with at least 50 employees"</span>,</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Job Title"</span>,</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Total Compensation"</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mp01_files/figure-html/additional-viz-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
 </div>
 
 
