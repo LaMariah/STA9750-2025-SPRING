@@ -9,6 +9,9 @@ format:
     toc-depth: 3
     number-sections: true
     theme: sandstone
+    code-fold: true          # Enable code folding
+    code-summary: "Show code" # Text shown on code fold button
+    code-tools: true         # Add a toolbar with code options
 ---
 
 # Executive Summary
@@ -22,6 +25,19 @@ This white paper presents an analysis of New York City's payroll data with recom
 3. **Flexible Work Implementation with Overtime Limits**: My original policy proposal involves implementing flexible work arrangements with a 20-hour monthly overtime cap, potentially saving $43.5 million annually while improving employee well-being and retention.
 
 These recommendations are based on a thorough analysis of NYC payroll data, with considerations for both financial impact and feasibility. Implementing all three policies could result in total annual savings of approximately $164.5 million.
+
+::: {.content-visible when-format="html"}
+## Key Visualizations
+
+### Salary Cap Impact
+![](#fig-salary-cap)
+
+### Overtime Reduction Strategy
+![](#fig-overtime-reduction)
+
+### Flexible Work Benefits
+![](#fig-flexible-work)
+:::
 
 ## Quick Facts About NYC Payroll
 
@@ -54,6 +70,9 @@ New York City employs over 300,000 people across dozens of agencies, with an ann
 ## Data Source
 
 ```{r data-acquisition}
+#| code-fold: true
+#| code-summary: "Show data acquisition code"
+
 # Task 1: Data Acquisition
 # This code would download NYC Payroll Data from the API endpoint
 
@@ -79,6 +98,9 @@ The NYC Payroll Data was obtained from the NYC Open Data portal. This dataset co
 ## Data Preparation
 
 ```{r data-preparation}
+#| code-fold: true
+#| code-summary: "Show data preparation code"
+
 # Task 2: Data Import and Preparation
 # This code demonstrates the data preparation steps
 
@@ -100,6 +122,9 @@ After importing the data, we standardized text formatting and calculated total c
 # Analysis of Mayor Eric Adams' Career
 
 ```{r adams-career}
+#| code-fold: true
+#| code-summary: "Show career analysis code"
+
 # Task 3: Create Employee Salary Table for Eric Adams
 library(knitr)
 
@@ -127,6 +152,9 @@ This section addresses Task 4, providing detailed answers to the instructor-prov
 ### Highest Base Rate of Pay
 
 ```{r highest-base-rate}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.1: Which job title has the highest base rate of pay?
 library(knitr)
 
@@ -146,6 +174,9 @@ The job title with the highest base rate of pay is "Chief Medical Examiner" with
 ### Highest Individual Total Payroll
 
 ```{r highest-individual}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.2: Which individual & in what year had the single highest total payroll?
 library(knitr)
 
@@ -168,6 +199,9 @@ Richard J. Williams, a Fire Department Chief, had the highest single-year total 
 ### Most Overtime Hours
 
 ```{r most-overtime}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.3: Which individual worked the most overtime hours?
 library(knitr)
 
@@ -191,6 +225,9 @@ Officer Thomas Martinez of the NYPD worked the most overtime hours with 2,086 ho
 ### Agency with Highest Average Payroll
 
 ```{r agency-payroll}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.4: Which agency has the highest average total annual payroll?
 library(knitr)
 
@@ -210,6 +247,9 @@ The Department of Law has the highest average total annual payroll at $115,624 p
 ### Agency with Most Employees
 
 ```{r agency-employees}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.5: Which agency has the most employees on payroll in each year?
 library(knitr)
 
@@ -229,6 +269,9 @@ The Department of Education has the most employees on payroll each year. In fisc
 ### Agency with Highest Overtime Usage
 
 ```{r overtime-usage}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.6: Which agency has the highest overtime usage?
 library(knitr)
 
@@ -250,6 +293,9 @@ The Fire Department has the highest overtime usage at 27.3% compared to regular 
 ### Average Salary Outside the Five Boroughs
 
 ```{r outside-boroughs}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.7: What is the average salary of employees who work outside the five boroughs?
 library(knitr)
 
@@ -269,6 +315,9 @@ The average salary of employees who work outside the five boroughs (Manhattan, B
 ### Payroll Growth Over the Past 10 Years
 
 ```{r payroll-growth}
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
 # Task 4.8: How much has the city's aggregate payroll grown over the past 10 years?
 library(knitr)
 
@@ -293,6 +342,11 @@ The city's aggregate payroll has grown by 32.8% over the past 10 years, from $25
 This section addresses Task 5, analyzing the impact of capping salaries at the mayoral level.
 
 ```{r salary-cap}
+#| label: fig-salary-cap
+#| fig-cap: "Impact of Salary Cap at Mayoral Level"
+#| code-fold: true
+#| code-summary: "Show policy analysis code"
+
 # Task 5: Analyze the Impact of Capping Salaries at Mayoral Level
 library(knitr)
 
@@ -352,6 +406,11 @@ We recommend:
 This section addresses Task 6, analyzing the potential savings from hiring additional employees to reduce overtime expenses.
 
 ```{r overtime-reduction}
+#| label: fig-overtime-reduction
+#| fig-cap: "Potential Savings from Strategic Hiring to Reduce Overtime"
+#| code-fold: true
+#| code-summary: "Show policy analysis code"
+
 # Task 6: Analyze the Potential Savings of Hiring Additional Employees
 library(knitr)
 
@@ -410,6 +469,11 @@ We recommend implementing a strategic hiring plan focused on:
 This section addresses Task 7, presenting my original policy proposal: implementing flexible work arrangements with overtime caps.
 
 ```{r flexible-work}
+#| label: fig-flexible-work
+#| fig-cap: "Impact of Flexible Work Policy with Overtime Cap"
+#| code-fold: true
+#| code-summary: "Show policy analysis code"
+
 # Task 7: Create and Analyze an Additional Policy Proposal
 library(knitr)
 
@@ -468,6 +532,9 @@ We recommend implementing this policy with the following approach:
 Based on our comprehensive analysis of NYC payroll data, we recommend implementing all three policies in a phased approach to optimize taxpayer spending:
 
 ```{r combined-impact}
+#| code-fold: true
+#| code-summary: "Show combined impact analysis"
+
 # Create table for combined financial impact
 library(knitr)
 
@@ -540,6 +607,9 @@ Future research should:
 ## Methodology Details
 
 ```{r methodology}
+#| code-fold: true
+#| code-summary: "Show methodology details"
+
 # Display methodology details
 cat("This analysis used R statistical software and the following packages:")
 cat("\n- dplyr (data manipulation)")
