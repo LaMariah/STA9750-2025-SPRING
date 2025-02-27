@@ -1,0 +1,74 @@
+---
+title: "Welcome"
+---
+
+![](https://api.dicebear.com/7.x/personas/svg?seed=LaMaria){.center width="200"}
+
+## About Me
+
+Hello! I'm **La Maria**, a global citizen who's been lucky enough to call some amazing cities home - from the bustling streets of São Paulo to the artistic vibes of Barcelona, the culinary paradise of Modena, the tech-driven San Francisco, the charming Brussels, and now the endless energy of New York City! 🌎
+
+I'm a Business Development professional with fifteen years of experience in event management and sales, currently pursuing my Master's in Business Analytics at Baruch College. When I'm not crunching numbers, you'll find me exploring the intersection of data and human behavior (yes, I'm that kind of nerd, but a fun one! 😄).
+
+> "Very little is needed to make a happy life; it is all within yourself, in your way of thinking." - Marcus Aurelius
+
+This quote from Marcus Aurelius pretty much sums up my life philosophy. Speaking of which...
+
+## My Daily Philosophy
+
+When I'm not diving into datasets or organizing community events, you'll find me: - **Running** through Central Park at dawn (sometimes having philosophical debates with myself about whether that extra mile is really necessary 😅) - **Gardening** my small but mighty urban jungle (where I practice patience and learn that not everything can be controlled by spreadsheets) - **Traveling** to discover new perspectives (and the best local coffee shops) - **Reading philosophy**, especially Stoicism (Marcus Aurelius is my go-to life coach from 2000 years ago)
+
+I speak English, Italian, Spanish, and Portuguese - which means I can discuss data analytics in four languages, but I prefer to talk about food in Italian! 🍝
+
+## Career Highlights
+
+-   **Data Analytics Coordinator** at the United Nations Staff Recreation Latin Club Society: Led a team in developing a data-driven marketing strategy that increased membership and boosted website traffic.
+-   **Internship at LaGuardia CUNY Department of Humanities & Health**: Applied data management techniques to organize and analyze research data, contributing to inclusive healthcare practices.
+
+## Education
+
+-   **Master's Degree in Business Analytics** - Expected Fall 2025, Baruch Zicklin, New York, NY
+-   **Bachelor's Degree in Communication and Media Studies** - Spring 2024, CUNY School of Professional Studies, New York, NY
+
+## My Favorite Playlist
+
+Music is the soundtrack of my life journey, here's what keeps me moving:
+
+1\. Piano Sonata No. 14 (Moonlight Sonata) - Ludwig van Beethoven (perfect for late-night coding sessions)
+
+2\. Non, je ne regrette rien - Edith Piaf (my power song for challenging days)
+
+3\. Aguas de Março - Elis Regina (brings me back to my Brazilian roots)
+
+4\. L'Amore si muove - Il Volo (reminds me of my time in Italy)
+
+## La Maria's Tip:
+
+Anyone can visite the United Nation Head Quarters and if you want to stop by here is the address;
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+if(!require("leaflet")){
+    options(repos=c(CRAN="https://cloud.r-project.org"))
+    install.packages("leaflet")
+    stopifnot(require("leaflet"))
+}
+
+un_longitude <- -73.968285
+un_latitude <- 40.748817
+
+leaflet() |>
+  addTiles() |>
+  setView(un_longitude, un_latitude, zoom=17) |>
+  addPopups(un_longitude, un_latitude, 
+            "I am at the <b>United Nations Headquarters</b> in New York!")
+
+#| include: false
+1+1
+```
+--------------
+Last Updated: `r format(Sys.time(), "%A %m %d, %Y at %H:%M%p")`
