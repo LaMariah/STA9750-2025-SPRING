@@ -1,0 +1,318 @@
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+## Exercise 1: Basic ggplot2 visualizations with the diamonds dataset
+str(diamonds)
+
+# 1. Make a scatter plot of price vs carat and facet it by cut
+ggplot(diamonds, aes(x = carat, y = price, color = cut )) +
+  geom_point(alpha = 0.3) +  
+  facet_wrap(~cut) +
+  labs(title = "Price vs. Carat by Cut",
+       x = "Carat",
+       y = "Price (USD)") +
+  theme_minimal()
+
+# 2. Use geom_smooth to see how the price-carat relationship changes by color
+ggplot(diamonds, aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.2) +  
+  geom_smooth(method = "lm", se = FALSE) +  
+  labs(title = "Price vs. Carat by Color",
+       x = "Carat",
+       y = "Price (USD)",
+       color = "Diamond Color") +
+  scale_color_brewer(palette = "Spectral") +  
+  theme_minimal()
+
+# 3. Create a frequency polygon plot of price, broken out by different diamond cuts
+ggplot(diamonds, aes(x = price, color = cut)) +
+  geom_freqpoly(binwidth = 500) +  # Setting bin width
+  labs(title = "Frequency Distribution of Diamond Prices by Cut",
+       x = "Price (USD)",
+       y = "Count",
+       color = "Cut Quality") +
+  theme_minimal() +
+  scale_x_continuous(limits = c(0, 20000))  # Limiting x-axis for better visualization
+
+# 4. Create a scatter plot of color by clarity - this won't be useful
+ggplot(diamonds, aes(x = color, y = clarity)) +
+  geom_point() +  # This doesn't work well because both variables are categorical
+  labs(title = "Diamond Color vs. Clarity (Not Useful)",
+       x = "Color",
+       y = "Clarity") +
+  theme_minimal()
+
+# 4. Stretch Goal: Better visualization using ggmosaic
+# First, install the package if not already installed
+# install.packages("ggmosaic")
+install.packages("ggmosaic")
+library(ggmosaic)
+
+# Create a mosaic plot
+ggplot(diamonds) +
+  geom_mosaic(aes(x = product(color, clarity), fill = color)) +
+  labs(title = "Mosaic Plot of Diamond Color and Clarity",
+       x = "Color",
+       y = "Clarity",
+       fill = "Color") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels
+
+##Exercise 2: Trend Analysis with ggplot2
+
+# Load required libraries
+install.packages("CVXR")
+library(CVXR) # For cdiac dataset
+install.packages("CVXR")
+library(tidyverse) # For data manipulation and ggplot2
+library(lubridate) # For date handling
+library(CVXR)      # For cdiac dataset
+library(tidyverse) # For data manipulation and ggplot2 (includes %>% operator)
+# OR at minimum:
+# library(dplyr)   # For the %>% operator
+# Load the cdiac dataset
+data(cdiac)
+
+# 1. Plot the estimated annual global mean temperature (GMT) anomaly from 1850 to 2015
+# First, convert years to proper dates for better axis formatting
+annual_data <- cdiac %>%
+  mutate(date = as.Date(paste0(year, "-01-01")))
+
+# Create the annual GMT anomaly plot
+ggplot(annual_data, aes(x = date, y = annual)) +
+  geom_line(color = "blue") +
+  geom_point(color = "blue", size = 1) +
+  labs(title = "Annual Global Mean Temperature Anomaly (1850-2015)",
+       x = "Year",
+       y = "Temperature Anomaly (°C)") +
+  theme_minimal() +
+  scale_x_date(date_breaks = "20 years", date_labels = "%Y")
+
+# 2. Plot the GMT anomaly for each month on the same plot (as different lines)
+# First, pivot the data to long format to get it in the right shape for ggplot2
+monthly_data <- cdiac %>%
+  pivot_longer(cols = c(jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec),
+               names_to = "month",
+               values_to = "anomaly") %>%
+  mutate(month = factor(month, 
+                        levels = c("jan", "feb", "mar", "apr", "may", "jun", 
+                                   "jul", "aug", "sep", "oct", "nov", "dec")))
+
+# Create a plot with a line for each month
+monthly_by_year <- monthly_data %>%
+  ggplot(aes(x = year, y = anomaly, color = month)) +
+  geom_line() +
+  labs(title = "Monthly Global Mean Temperature Anomalies (1850-2015)",
+       x = "Year",
+       y = "Temperature Anomaly (°C)",
+       color = "Month") +
+  theme_minimal() +
+  scale_color_viridis_d()
+
+print(monthly_by_year)
+
+# 3. Plot the monthly GMT anomaly series as one long line
+# Create a proper date column for each month-year combination
+monthly_series_data <- monthly_data %>%
+  mutate(
+    month_num = match(month, c("jan", "feb", "mar", "apr", "may", "jun", 
+                               "jul", "aug", "sep", "oct", "nov", "dec")),
+    date = as.Date(paste(year, month_num, "15", sep = "-"))
+  )
+
+# Create the continuous monthly series plot
+ggplot(monthly_series_data, aes(x = date, y = anomaly)) +
+  geom_line(color = "red", size = 0.5) +
+  geom_point(color = "red", size = 0.5, alpha = 0.3) +
+  labs(title = "Monthly Global Mean Temperature Anomaly Series (1850-2015)",
+       x = "Year",
+       y = "Temperature Anomaly (°C)") +
+  theme_minimal() +
+  scale_x_date(date_breaks = "20 years", date_labels = "%Y")
+
+# 4. Focus on July: plot the July GMT anomaly with 5-year running median
+july_data <- monthly_data %>%
+  filter(month == "jul") %>%
+  arrange(year)
+
+# Calculate the 5-year running median
+july_data <- july_data %>%
+  mutate(running_median = runmed(anomaly, k = 5))
+
+# Create the July anomaly plot with running median
+ggplot(july_data, aes(x = year)) +
+  geom_line(aes(y = anomaly), color = "orange", alpha = 0.7) +
+  geom_point(aes(y = anomaly), color = "orange", size = 1.5) +
+  geom_line(aes(y = running_median), color = "red", size = 1.2) +
+  labs(title = "July Temperature Anomaly with 5-Year Running Median (1850-2015)",
+       subtitle = "Evidence of increasing warming trend visible in recent decades",
+       x = "Year",
+       y = "Temperature Anomaly (°C)") +
+  theme_minimal()
+
+# 5. For each year, identify the warmest month and create a histogram
+# First, find the warmest month for each year
+warmest_months <- monthly_data %>%
+  group_by(year) %>%
+  filter(anomaly == max(anomaly)) %>%
+  ungroup()
+
+# Convert month to a properly ordered factor for the histogram
+month_levels <- c("jan", "feb", "mar", "apr", "may", "jun", 
+                  "jul", "aug", "sep", "oct", "nov", "dec")
+month_labels <- c("January", "February", "March", "April", "May", "June", 
+                  "July", "August", "September", "October", "November", "December")
+
+warmest_months <- warmest_months %>%
+  mutate(month = factor(month, levels = month_levels, labels = month_labels))
+
+# Create the histogram of warmest months
+ggplot(warmest_months, aes(x = month)) +
+  geom_bar(fill = "darkred") +
+  labs(title = "Distribution of Warmest Month in Each Year (1850-2015)",
+       x = "Month",
+       y = "Frequency") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+ ##Exercise 3: Animated Graphics
+  # Install required packages (uncomment if needed)
+install.packages(c("gganimate", "gapminder", "gifski", "av", "tidyverse"))
+
+# Load required libraries
+library(gganimate)
+library(gapminder)
+library(gifski)
+library(av)
+library(tidyverse)
+
+# Step 2: Create a scatter plot for the year 1952
+gapminder_1952 <- gapminder %>% 
+  filter(year == 1952)
+
+p1952 <- ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, 
+                                    color = continent, size = pop)) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10(labels = scales::dollar_format()) +
+  labs(title = "Life Expectancy vs GDP Per Capita (1952)",
+       x = "GDP Per Capita (log scale)",
+       y = "Life Expectancy (years)",
+       size = "Population",
+       color = "Continent") +
+  theme_minimal()
+
+print(p1952)
+
+# Step 3: Identify the outlier
+outlier <- gapminder_1952 %>% 
+  arrange(desc(gdpPercap)) %>% 
+  slice(1)
+
+print(paste("The outlier country in 1952 is:", outlier$country, 
+            "with GDP per capita of", round(outlier$gdpPercap, 2)))
+
+# Remove the outlier (Kuwait)
+gapminder_filtered <- gapminder %>% 
+  filter(country != "Kuwait")
+
+# Step 4: Create an animated plot showing changes over time
+p_animated <- ggplot(gapminder_filtered, 
+                    aes(x = gdpPercap, y = lifeExp, 
+                        color = continent, size = pop)) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10(labels = scales::dollar_format()) +
+  labs(title = "Life Expectancy vs GDP Per Capita: {frame_time}",
+       x = "GDP Per Capita (log scale)",
+       y = "Life Expectancy (years)",
+       size = "Population",
+       color = "Continent") +
+  theme_minimal() +
+  transition_time(year)
+
+# Preview the animation
+# animate(p_animated, fps = 5, duration = 15)
+
+# Step 5: Make it publication ready
+p_publication <- ggplot(gapminder_filtered, 
+                       aes(x = gdpPercap, y = lifeExp, 
+                           color = continent, size = pop)) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10(labels = scales::dollar_format()) +
+  scale_size(range = c(2, 12), guide = "none") +  # Better size range, remove legend
+  labs(title = "Global Health & Wealth: {frame_time}",
+       subtitle = "Each bubble represents a country",
+       caption = "Source: Gapminder dataset",
+       x = "GDP Per Capita (log scale, USD)",
+       y = "Life Expectancy (years)",
+       color = "Continent") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 12),
+    plot.caption = element_text(hjust = 0, face = "italic"),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank(),
+    axis.title = element_text(face = "bold")
+  ) +
+  transition_time(year) +
+  ease_aes('linear')
+
+# Preview the improved animation
+# animate(p_publication, fps = 5, duration = 15)
+
+# Step 6: Use Hans Rosling's preferred color scheme
+# Get country colors from gapminder package
+data(country_colors)
+
+# Match country colors with continent colors
+continent_colors <- unique(gapminder_filtered %>%
+  select(country, continent) %>%
+  left_join(data.frame(country = names(country_colors),
+                       color = country_colors,
+                       stringsAsFactors = FALSE),
+            by = "country") %>%
+  select(continent, color))
+
+# Create a named vector of colors for each continent
+continent_color_map <- setNames(
+  c("#FF5555", "#FFD42A", "#5CB85C", "#428BCA", "#AA66CC"),  # Custom colors for continents
+  c("Africa", "Americas", "Asia", "Europe", "Oceania")
+)
+
+# Final animation with Hans Rosling's color scheme
+p_final <- ggplot(gapminder_filtered, 
+                 aes(x = gdpPercap, y = lifeExp, 
+                     color = continent, size = pop/1000000)) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10(labels = scales::dollar_format(accuracy = 1), 
+                breaks = c(300, 1000, 3000, 10000, 30000)) +
+  scale_color_manual(values = continent_color_map) +
+  scale_size(range = c(2, 12), 
+            name = "Population (millions)",
+            breaks = c(1, 10, 100, 1000)) +
+  labs(title = "Global Health & Wealth in {frame_time}",
+       subtitle = "Relationship between life expectancy and GDP per capita",
+       caption = "Source: Gapminder.org | Visualization inspired by Hans Rosling",
+       x = "GDP Per Capita (inflation-adjusted USD, log scale)",
+       y = "Life Expectancy (years)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 20, face = "bold"),
+    plot.subtitle = element_text(size = 14),
+    plot.caption = element_text(hjust = 0, face = "italic", size = 8),
+    legend.position = "bottom",
+    legend.box = "vertical",
+    panel.grid.minor = element_blank(),
+    axis.title = element_text(face = "bold", size = 12),
+    axis.text = element_text(size = 10)
+  ) +
+  guides(color = guide_legend(override.aes = list(size = 5))) +
+  transition_time(year) +
+  shadow_wake(wake_length = 0.1, alpha = FALSE) +  # Add trailing effect
+  ease_aes('cubic-in-out')  # Smoother transition
+
+# Save the final animation (uncomment to save)
+# anim_final <- animate(p_final, fps = 10, duration = 20, 
+#                     width = 800, height = 500, renderer = gifski_renderer())
+# anim_save("gapminder_animation.gif", anim_final)
