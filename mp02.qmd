@@ -1501,7 +1501,7 @@ execute:
   message: false
 ---
 
-```{r setup, include=FALSE}
+``````{r load-libraries, include=FALSE}
 library(tidyverse)
 library(httr2)
 library(rvest)
@@ -1573,7 +1573,8 @@ By examining these factors in concert, we can identify which agencies are leadin
 
 First, I'll import the necessary data sets as specified in the instructions.
 
-```{r import-functions}
+```{r import-packages}
+
 ensure_package <- function(pkg){
     pkg <- as.character(substitute(pkg))
     options(repos = c(CRAN = "https://cloud.r-project.org"))
