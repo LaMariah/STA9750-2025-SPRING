@@ -1,3 +1,5 @@
 /.quarto/
 .Rproj.user
 data/mp01/nyc_payroll_export.csv
+mp02.qmd
+mp02.yaml
