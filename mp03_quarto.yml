@@ -1,0 +1,10 @@
+project:
+  type: website
+
+website:
+  # where the rendered files go
+  output-dir: docs
+
+  # list exactly the pages you want built:
+  pages:
+    - mp03.qmd

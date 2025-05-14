@@ -1,0 +1,17 @@
+
+Call:
+lm(formula = total_shootings ~ avg_noise_percentage, data = combined_data)
+
+Residuals:
+     1      2      3 
+ 85.73 -64.11 -21.61 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)
+(Intercept)            -16.02     370.94  -0.043    0.973
+avg_noise_percentage    23.35      33.82   0.690    0.615
+
+Residual standard error: 109.2 on 1 degrees of freedom
+Multiple R-squared:  0.3228,	Adjusted R-squared:  -0.3545 
+F-statistic: 0.4766 on 1 and 1 DF,  p-value: 0.6153
+
