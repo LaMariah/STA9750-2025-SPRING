@@ -1,0 +1,96 @@
+# STA9750 — Applied Business Analytics (Spring 2025)
+
+Analytics projects from **STA9750** in my **M.S. in Business Analytics** at the Zicklin School of Business, Baruch College (CUNY), by **Gerusa Maso** ([@LaMariah](https://github.com/LaMariah)).
+
+I'm a senior PR & events professional pivoting into **business analysis** — pairing a decade of brand, stakeholder, and campaign experience with the analytical toolkit to turn data into decisions. These projects use **R**, **Quarto**, and **ggplot2** to take public datasets from raw data to a clear, communicated business narrative.
+
+🔗 **Live site:** https://lamariah.github.io/STA9750-2025-SPRING/
+
+---
+
+## ⭐ Final project — NYC Noise Complaints: Temporal Patterns
+
+An analysis of NYC 311 noise-complaint data (2022–2025) examining how **time of day, day of week, and season** shape the city's noise landscape — and how young-adult neighborhoods drive the patterns.
+
+**Key findings**
+- Noise complaints peak in **summer** and on **weekend late nights**
+- Neighborhoods with higher shares of **young adults** generate disproportionately more complaints
+- Clear temporal rhythms point to where **noise-enforcement resources** could be targeted
+
+**Built with:** R · Quarto · ggplot2 · NYC 311 Open Data
+📄 **Read it:** https://lamariah.github.io/STA9750-2025-SPRING/
+
+---
+
+## 🎧 Mini-project — Creating the Ultimate Playlist
+
+A data-driven approach to building the "ultimate" Spotify playlist, analyzing audio features (danceability, energy, tempo, key) across thousands of tracks and the Million Playlist Dataset to find what makes songs work together.
+
+**Highlights**
+- Explored relationships between **energy and danceability** to anchor the playlist's feel
+- Surfaced **decade representation** and **peak-danceability** tracks
+- Combined the **Spotify audio-features** data with the **Million Playlist Dataset**
+
+**Built with:** R · Quarto · ggplot2 · Spotify / Million Playlist data
+📄 See `mp03.html` (open in a browser) and the source in `mp03.qmd`.
+
+---
+
+## 🗳️ Mini-project — The Shifting Electorate (2020 → 2024)
+
+A county-level analysis of how U.S. presidential voting shifted between 2020 and 2024, mapping battleground movement and testing how demographic factors — education, community type, and Latino population shifts — correlate with margin changes.
+
+**Highlights**
+- Mapped **county-level vote-margin shifts** across the country
+- Examined the **education divide** and **community-type** patterns behind the movement
+- Built **population-weighted** views to separate real swings from small-county noise
+
+**Built with:** R · Quarto · ggplot2 · county election & Census data
+📄 See `mp04.html` (open in a browser) and the source in `mp04.qmd`.
+
+---
+
+## 📂 Repository structure
+
+```
+├── README.md
+├── finalprojectpresent.qmd / .html   # Final project — NYC Noise
+├── mp03.qmd / mp03.html              # Mini-project — Ultimate Playlist
+├── about.qmd                         # About page
+├── build_site.R                      # Renders the site into docs/
+├── styles.css / custom.css           # Site styling
+├── data/                             # Source datasets for the projects
+└── docs/                             # Rendered site served by GitHub Pages
+```
+
+---
+
+## 🛠️ Tools & skills
+
+- **Analytics:** R, ggplot2, exploratory data analysis, turning data into a business narrative
+- **Reporting:** Quarto — literate programming (code + narrative + output in one document)
+- **Communication:** translating analysis into clear visuals and recommendations for non-technical stakeholders
+- **Workflow:** Git version control, reproducible rendering, GitHub Pages publishing
+- **Data:** public/open datasets (NYC Open Data, Spotify, Million Playlist Dataset)
+- **Languages:** English, Portuguese, Spanish, Italian
+
+---
+
+## ⚙️ Reproduce the site
+
+```bash
+# Requires R and Quarto
+Rscript build_site.R
+```
+
+This renders the `.qmd` files into `docs/`, which GitHub Pages serves as the live site.
+
+---
+
+## 👤 About
+
+**Gerusa Maso** — senior PR & events professional with 10+ years producing premium large-scale events and leading brand communications across Brazil, the U.S., and Europe (Formula 1 Brazilian GP, Lollapalooza, FIFA World Cup, Rio 2016, Brazilian Day Newark). Founder of the communications agency Emperialle, where campaigns grew brand engagement 25% and revenue 30%. 2019 *Community Builder of the Year* (The Garra Award × NY Women's Foundation).
+
+Graduating with an **M.S. in Business Analytics** (Zicklin School of Business, Baruch College, 2026) and pivoting into **business analysis** — bringing stakeholder fluency and campaign-impact thinking together with data.
+
+📍 New York · [LinkedIn](https://www.linkedin.com/in/gms123456/)
