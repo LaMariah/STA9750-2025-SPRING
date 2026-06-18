@@ -8,6 +8,21 @@ I'm a senior PR & events professional pivoting into **business analysis** — pa
 
 ---
 
+## ⭐ Applied research — The First-Gen Cliff (NEH Health Humanities, LaGuardia CC)
+
+A mixed-methods study quantifying why first-generation students leave college — and turning the evidence into a launched degree program. Presented at the **SCRA Biennial Conference (2023)**.
+
+**Key findings**
+- First-gen students carry **2–3× the strain** across financial, mental-health, and academic-direction risk
+- The **dropout cliff is Semester 1** (risk score 9.0), making early intervention decisive
+- Compound barriers — work (71%), financial (64%), unclear career path (58%) — hit first-gen students at ~double the rate
+- Findings fed the design of LaGuardia's **Health Humanities AA degree**, now live in the catalog
+
+**Built with:** comparative survey design · qualitative transcript coding · stakeholder dashboarding
+📄 **Read it:** https://lamariah.github.io/STA9750-2025-SPRING/laguardia.html
+
+---
+
 ## ⭐ Final project — NYC Noise Complaints: Temporal Patterns
 
 An analysis of NYC 311 noise-complaint data (2022–2025) examining how **time of day, day of week, and season** shape the city's noise landscape — and how young-adult neighborhoods drive the patterns.
