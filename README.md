@@ -1,10 +1,10 @@
-# STA9750 — Applied Business Analytics (Spring 2025)
+# Studies & Research — Applied Business Analytics
 
-Analytics projects from **STA9750** in my **M.S. in Business Analytics** at the Zicklin School of Business, Baruch College (CUNY), by **Gerusa Maso** ([@LaMariah](https://github.com/LaMariah)).
+A portfolio of analytics and research projects from my **M.S. in Business Analytics** at the Zicklin School of Business, Baruch College (CUNY), and my applied research work, by **Gerusa Maso** ([@LaMariah](https://github.com/LaMariah)).
 
 I'm a senior PR & events professional pivoting into **business analysis** — pairing a decade of brand, stakeholder, and campaign experience with the analytical toolkit to turn data into decisions. These projects use **R**, **Quarto**, and **ggplot2** to take public datasets from raw data to a clear, communicated business narrative.
 
-🔗 **Live site:** https://lamariah.github.io/STA9750-2025-SPRING/
+🔗 **Live site:** https://lamariah.github.io/STUDIES_AND_RESEARCH/
 
 ---
 
@@ -19,7 +19,7 @@ A mixed-methods study quantifying why first-generation students leave college �
 - Findings fed the design of LaGuardia's **Health Humanities AA degree**, now live in the catalog
 
 **Built with:** comparative survey design · qualitative transcript coding · stakeholder dashboarding
-📄 **Read it:** https://lamariah.github.io/STA9750-2025-SPRING/laguardia.html
+📄 **Read it:** https://lamariah.github.io/STUDIES_AND_RESEARCH/laguardia.html
 
 ---
 
@@ -33,7 +33,7 @@ An analysis of NYC 311 noise-complaint data (2022–2025) examining how **time o
 - Clear temporal rhythms point to where **noise-enforcement resources** could be targeted
 
 **Built with:** R · Quarto · ggplot2 · NYC 311 Open Data
-📄 **Read it:** https://lamariah.github.io/STA9750-2025-SPRING/
+📄 **Read it:** https://lamariah.github.io/STUDIES_AND_RESEARCH/
 
 ---
 
@@ -69,10 +69,12 @@ A county-level analysis of how U.S. presidential voting shifted between 2020 and
 
 ```
 ├── README.md
+├── laguardia.html                    # Applied research — The First-Gen Cliff (NEH)
 ├── finalprojectpresent.qmd / .html   # Final project — NYC Noise
 ├── mp03.qmd / mp03.html              # Mini-project — Ultimate Playlist
+├── mp04.qmd / mp04.html              # Mini-project — The Shifting Electorate
 ├── about.qmd                         # About page
-├── build_site.R                      # Renders the site into docs/
+├── build_site.R                      # Renders the Quarto site into docs/
 ├── styles.css / custom.css           # Site styling
 ├── data/                             # Source datasets for the projects
 └── docs/                             # Rendered site served by GitHub Pages
