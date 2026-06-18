@@ -61,7 +61,7 @@ A county-level analysis of how U.S. presidential voting shifted between 2020 and
 - Built **population-weighted** views to separate real swings from small-county noise
 
 **Built with:** R · Quarto · ggplot2 · county election & Census data
-📄 See `mp04.html` (open in a browser) and the source in `mp04.qmd`.
+📄 **Highlights:** https://lamariah.github.io/STUDIES_AND_RESEARCH/mp04_highlights.html · full report in `mp04.html` / `mp04.qmd`
 
 ---
 
